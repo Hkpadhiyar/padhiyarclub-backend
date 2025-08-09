@@ -1,0 +1,15 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    balance DECIMAL(10,2) DEFAULT 0
+);
+
+CREATE TABLE bets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    colour ENUM('red','green','blue') NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    result ENUM('win','lose') DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
