@@ -1,15 +1,16 @@
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    balance DECIMAL(10,2) DEFAULT 0
-);
-
-CREATE TABLE bets (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    colour ENUM('red','green','blue') NOT NULL,
-    amount DECIMAL(10,2) NOT NULL,
-    result ENUM('win','lose') DEFAULT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+{
+  "name": "padhiyarclub-backend",
+  "version": "1.0.0",
+  "description": "Backend for Padhiyar Club colour prediction game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  }
+}
